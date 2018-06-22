@@ -1,0 +1,52 @@
+<p>
+<label>Nom :</label>
+<input 
+    [type]="defineOne"
+    [style.backgroundColor]="inputColorNom"
+    (change)="changeColorInputNom('yellow')"
+/>
+</p>
+<p>
+<label>Prénom</label>
+<input 
+    [type]="defineOne"
+    [style.backgroundColor]="inputColorPrenom"
+    (change)="changeColorInputPrenom('yellow')"/>
+</p>
+<p>
+<label>Né(e) le: </label>
+<input 
+    [type]="defineTwo"
+    [style.backgroundColor]="inputColorDate"
+    (change)="changeColorInputDate('yellow')" />
+</p>
+<p>
+<img style="width:200px; height: 200px;" [src]="lienImage"/>
+</p>
+<p>Qu'est ce que vous inspire cette image ?</p>
+<input  
+    [type]="defineOne"
+    [style.backgroundColor]="inputColorChoix"
+    (change)="changeColorInputChoix('yellow')"
+    [(ngModel)]="content" /> 
+<p>{{ content }}</p>
+<p>
+
+    <button 
+        style= "height: 50px; width: 200px;"
+        [style.backgroundColor]="color"
+        (click)="changeColor('red')"
+        (mouseenter)="changeColor('yellow')"
+        (mouseleave)="changeColor('green')"
+        >
+        Soumettre le formulaire
+    </button>
+</p>
+
+<button (click)="status=!status">p1 ou p2</button>
+<p *ngIf='status'>p1</p>
+<p *ngIf='!status'>p2</p>
+
+<ul *ngFor="let text of texts">
+    <li>{{text}}</li>
+</ul>
